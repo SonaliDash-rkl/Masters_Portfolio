@@ -10,7 +10,7 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --accent: #8BA644;       /* olive-green accent like the reference */
+    --accent: #8BA644;
     --accent-hover: #A0BD4F;
     --dark: #1a1f14;
     --text-light: #f0f0ec;
@@ -27,7 +27,7 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── NAV ── */
+  /* -- NAV -- */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
@@ -50,7 +50,7 @@
   }
   .nav-links a:hover, .nav-links a.active { color: var(--text-light); }
 
-  /* ── HERO ── */
+  /* -- HERO -- */
   .hero {
     position: relative;
     min-height: 100vh;
@@ -58,16 +58,8 @@
     overflow: hidden;
   }
 
-  /* Background image layer — REPLACE url() WITH YOUR OWN PHOTO */
   .hero-bg {
     position: absolute; inset: 0; z-index: 0;
-    /* ─────────────────────────────────────────────────────
-       TO ADD YOUR BACKGROUND IMAGE:
-       1. Put your photo in the same folder as this file
-          (e.g. "bg-hero.jpg")
-       2. Uncomment the next line and update the filename:
-       background: url('bg-hero.jpg') center/cover no-repeat;
-       ───────────────────────────────────────────────────── */
     background: linear-gradient(135deg, #1a2a12 0%, #1e2e1a 30%, #14232a 70%, #0f1a14 100%);
   }
   .hero-bg::after {
@@ -142,18 +134,9 @@
   }
   .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* Profile photo area — right side */
+  /* Profile photo */
   .hero-photo {
     display: flex; justify-content: center; align-items: center;
-  }
-  .hero-photo-placeholder {
-    width: 340px; height: 420px;
-    border-radius: 12px;
-    border: 2px dashed rgba(139,166,68,.35);
-    display: flex; align-items: center; justify-content: center;
-    color: var(--text-muted); font-size: 0.82rem; text-align: center;
-    padding: 1.5rem;
-    background: rgba(139,166,68,.04);
   }
   .hero-photo-img {
     width: 360px; max-width: 100%; height: auto;
@@ -162,16 +145,8 @@
     box-shadow: 0 24px 64px rgba(0,0,0,.45);
     border: 2px solid rgba(139,166,68,.2);
   }
-  /* ─────────────────────────────────────────────────────
-     TO ADD YOUR PROFILE PHOTO:
-     1. Put your photo (e.g. "profile.png") in the folder
-     2. Replace the .hero-photo-placeholder div with:
-        <img src="profile.png" alt="Sonali Dash"
-             style="width:340px; height:auto; border-radius:12px;
-                    object-fit:cover; box-shadow:0 20px 60px rgba(0,0,0,.4);">
-     ───────────────────────────────────────────────────── */
 
-  /* ── RESPONSIVE ── */
+  /* -- RESPONSIVE -- */
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { gap: 1.2rem; }
@@ -196,10 +171,10 @@
   <a href="#" class="nav-logo">&#9670; <span>Sonali</span> Dash</a>
   <ul class="nav-links">
     <li><a href="#" class="active">Home</a></li>
-    <li><a href="#">Journey</a></li>
-    <li><a href="#">Projects</a></li>
-    <li><a href="#">Skills</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="#">Workday</a></li>
+    <li><a href="#">Academic Projects</a></li>
+    <li><a href="#">Hackathons</a></li>
+    <li><a href="#">Internships</a></li>
   </ul>
 </nav>
 
@@ -213,7 +188,7 @@
       <p class="hero-role">Enterprise Technology Consultant</p>
 
       <p class="hero-tagline">
-        From requirements to rollout &mdash; I turn complex systems into working solutions.
+        From Imagine to Post Go-Live &mdash; I transform existing systems into Workday cloud platform.
       </p>
 
       <p class="hero-about">
