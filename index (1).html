@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonali Dash | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --accent: #8BA644;       /* olive-green accent like the reference */
+    --accent-hover: #A0BD4F;
+    --dark: #1a1f14;
+    --text-light: #f0f0ec;
+    --text-muted: #c8c8c0;
+    --nav-bg: rgba(18, 22, 14, 0.92);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--text-light);
+    background: var(--dark);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 3.5rem;
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(139,166,68,.15);
+  }
+  .nav-logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em;
+    color: var(--text-light); text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+  .nav-links a {
+    color: var(--text-muted); text-decoration: none;
+    font-size: 0.88rem; font-weight: 500; letter-spacing: 0.01em;
+    transition: color .2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--text-light); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex; align-items: center;
+    overflow: hidden;
+  }
+
+  /* Background image layer — REPLACE url() WITH YOUR OWN PHOTO */
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    /* ─────────────────────────────────────────────────────
+       TO ADD YOUR BACKGROUND IMAGE:
+       1. Put your photo in the same folder as this file
+          (e.g. "bg-hero.jpg")
+       2. Uncomment the next line and update the filename:
+       background: url('bg-hero.jpg') center/cover no-repeat;
+       ───────────────────────────────────────────────────── */
+    background: linear-gradient(135deg, #1a2a12 0%, #1e2e1a 30%, #14232a 70%, #0f1a14 100%);
+  }
+  .hero-bg::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(14,18,10,.88) 0%, rgba(14,18,10,.65) 55%, rgba(14,18,10,.25) 100%);
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    max-width: 1280px; width: 100%;
+    margin: 0 auto;
+    padding: 7rem 3.5rem 4rem;
+    gap: 3rem;
+  }
+
+  .hero-text { max-width: 620px; }
+
+  .hero-greeting {
+    font-size: 1.15rem; font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-name {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.35rem;
+  }
+  .hero-name span { color: var(--accent); }
+
+  .hero-role {
+    font-size: 1.25rem; font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 1.4rem;
+  }
+
+  .hero-tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; font-weight: 500;
+    font-size: 1.15rem; line-height: 1.5;
+    color: var(--accent);
+    margin-bottom: 1.3rem;
+  }
+
+  .hero-about {
+    font-size: 0.92rem; line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 0.72rem 1.6rem;
+    font-size: 0.88rem; font-weight: 600;
+    border-radius: 4px; text-decoration: none;
+    transition: all .25s;
+    cursor: pointer; border: none;
+  }
+  .btn-primary {
+    background: var(--accent); color: #111;
+  }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-secondary {
+    background: transparent; color: var(--text-light);
+    border: 1.5px solid rgba(240,240,236,.35);
+  }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Profile photo area — right side */
+  .hero-photo {
+    display: flex; justify-content: center; align-items: center;
+  }
+  .hero-photo-placeholder {
+    width: 340px; height: 420px;
+    border-radius: 12px;
+    border: 2px dashed rgba(139,166,68,.35);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted); font-size: 0.82rem; text-align: center;
+    padding: 1.5rem;
+    background: rgba(139,166,68,.04);
+  }
+  .hero-photo-img {
+    width: 360px; max-width: 100%; height: auto;
+    border-radius: 14px;
+    object-fit: cover;
+    box-shadow: 0 24px 64px rgba(0,0,0,.45);
+    border: 2px solid rgba(139,166,68,.2);
+  }
+  /* ─────────────────────────────────────────────────────
+     TO ADD YOUR PROFILE PHOTO:
+     1. Put your photo (e.g. "profile.png") in the folder
+     2. Replace the .hero-photo-placeholder div with:
+        <img src="profile.png" alt="Sonali Dash"
+             style="width:340px; height:auto; border-radius:12px;
+                    object-fit:cover; box-shadow:0 20px 60px rgba(0,0,0,.4);">
+     ───────────────────────────────────────────────────── */
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .hero-content {
+      grid-template-columns: 1fr;
+      padding: 6rem 1.5rem 3rem;
+      text-align: left;
+    }
+    .hero-photo { display: none; }
+  }
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .hero-name { font-size: 2rem; }
+    .hero-content { padding: 5.5rem 1.2rem 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">&#9670; <span>Sonali</span> Dash</a>
+  <ul class="nav-links">
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="#">Journey</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="#">Skills</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO / ABOUT -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-greeting">Hi! I'm</p>
+      <h1 class="hero-name">Sonali <span>Dash</span></h1>
+      <p class="hero-role">Enterprise Technology Consultant</p>
+
+      <p class="hero-tagline">
+        From requirements to rollout &mdash; I turn complex systems into working solutions.
+      </p>
+
+      <p class="hero-about">
+        Four years of ERP consulting at Deloitte across Workday Financials, HCM, and integrations, now building an AI-assisted quoting platform at Toshiba on AWS, Salesforce, and Oracle EBS. I bridge the gap between business stakeholders and technical delivery &mdash; whether that means writing SQL and Studio integrations, running gap analyses, or leading cross-functional teams through cutover. Currently pursuing my M.S. in MIS at Texas A&amp;M.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-primary">View My Work</a>
+        <a href="#" class="btn btn-secondary">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <img src="public/profile.jpeg" alt="Sonali Dash"
+           class="hero-photo-img">
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
