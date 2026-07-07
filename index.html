@@ -27,7 +27,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* -- NAV -- */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
@@ -50,7 +49,6 @@
   }
   .nav-links a:hover, .nav-links a.active { color: var(--text-light); }
 
-  /* -- HERO -- */
   .hero {
     position: relative;
     min-height: 100vh;
@@ -124,9 +122,7 @@
     transition: all .25s;
     cursor: pointer; border: none;
   }
-  .btn-primary {
-    background: var(--accent); color: #111;
-  }
+  .btn-primary { background: var(--accent); color: #111; }
   .btn-primary:hover { background: var(--accent-hover); }
   .btn-secondary {
     background: transparent; color: var(--text-light);
@@ -134,7 +130,6 @@
   }
   .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* Profile photo */
   .hero-photo {
     display: flex; justify-content: center; align-items: center;
   }
@@ -146,14 +141,12 @@
     border: 2px solid rgba(139,166,68,.2);
   }
 
-  /* -- RESPONSIVE -- */
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { gap: 1.2rem; }
     .hero-content {
       grid-template-columns: 1fr;
       padding: 6rem 1.5rem 3rem;
-      text-align: left;
     }
     .hero-photo { display: none; }
   }
@@ -166,7 +159,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">&#9670; <span>Sonali</span> Dash</a>
   <ul class="nav-links">
@@ -178,7 +170,6 @@
   </ul>
 </nav>
 
-<!-- HERO / ABOUT -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-content">
@@ -188,11 +179,11 @@
       <p class="hero-role">Enterprise Technology Consultant</p>
 
       <p class="hero-tagline">
-        From Imagine to Post Go-Live &mdash; I transform existing systems into Workday cloud platform.
+        From Imagine to Post Go-Live &#8212; I transform existing systems into Workday cloud platform.
       </p>
 
       <p class="hero-about">
-        Four years of ERP consulting at Deloitte across Workday Financials, HCM, and integrations, now building an AI-assisted quoting platform at Toshiba on AWS, Salesforce, and Oracle EBS. I bridge the gap between business stakeholders and technical delivery &mdash; whether that means writing SQL and Studio integrations, running gap analyses, or leading cross-functional teams through cutover. Currently pursuing my M.S. in MIS at Texas A&amp;M.
+        Four years of ERP consulting at Deloitte across Workday Financials, HCM, and integrations, now building an AI-assisted quoting platform at Toshiba on AWS, Salesforce, and Oracle EBS. I bridge the gap between business stakeholders and technical delivery &#8212; whether that means writing SQL and Studio integrations, running gap analyses, or leading cross-functional teams through cutover. Currently pursuing my M.S. in MIS at Texas A&amp;M.
       </p>
 
       <div class="hero-ctas">
@@ -202,8 +193,7 @@
     </div>
 
     <div class="hero-photo">
-      <img src="profile.jpeg" alt="Sonali Dash"
-           class="hero-photo-img">
+      <img src="profile.jpeg" alt="Sonali Dash" class="hero-photo-img">
     </div>
   </div>
 </section>
