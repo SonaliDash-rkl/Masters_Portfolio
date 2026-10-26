@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:claude.ai)",
+      "Bash(curl -sI https://fonts.googleapis.com/css2?family=Source+Serif+4 --max-time 8)",
+      "Bash(cd \"C:\\\\Users\\\\sonal\\\\Documents\\\\Portfolio 1208\" && mkdir -p assets/resume assets/images css && cp \"/c/Users/sonal/Downloads/Dash_Sonali_WorkdayFinancials_0701.pdf\" assets/resume/ && ls assets/resume/)",
+      "Bash(mkdir -p journey)",
+      "Bash(cp '__TRACKED_VAR__/Toshiba International Corporation.png' journey/toshiba.png)",
+      "Bash(cp '__TRACKED_VAR__/Texas A&M University, Mays Business School.jpg' journey/mays.jpg)",
+      "Bash(cp '__TRACKED_VAR__/Deloitte USI · Hyderabad, India 01.JPG' journey/deloitte.jpg)",
+      "Bash(cp '__TRACKED_VAR__/Veer Surendra Sai University of Technology, India.png' journey/vssut.png)",
+      "Bash(python -c ' *)",
+      "Bash(python -c \"import PIL; print\\('PIL',PIL.__version__\\)\")",
+      "Bash(pip install *)",
+      "Bash(python -c \"import PIL; print\\('PIL ok', PIL.__version__\\)\")",
+      "PowerShell(winget install --id GitHub.cli -e --accept-source-agreements --accept-package-agreements --disable-interactivity)",
+      "PowerShell($p = @\\(\"$env:ProgramFiles\\\\GitHub CLI\\\\gh.exe\",\"${env:ProgramFiles\\(x86\\)}\\\\GitHub CLI\\\\gh.exe\",\"$env:LOCALAPPDATA\\\\Microsoft\\\\WinGet\\\\Links\\\\gh.exe\"\\) | Where-Object { Test-Path $_ } | Select-Object -First 1; if \\($p\\) { Write-Output \"FOUND: $p\"; & $p --version } else { Write-Output \"not found in common paths\"; Get-ChildItem -Path \"$env:ProgramFiles\",\"${env:ProgramFiles\\(x86\\)}\" -Filter gh.exe -Recurse -ErrorAction SilentlyContinue | Select-Object -First 3 -ExpandProperty FullName })"
+    ]
+  }
+}

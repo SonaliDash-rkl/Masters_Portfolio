@@ -1,12 +1,3 @@
-# Local Claude Code settings
-.claude/settings.local.json
-
-# Original source images (the site uses the optimized copies in
-# assets/images/journey, /projects and /logos — these originals stay local)
-assets/images/My Professional journey pics/
-assets/images/Work Experience pics/
-assets/images/Academic Projects pics/
-
 # OS / editor junk
 .DS_Store
 Thumbs.db
