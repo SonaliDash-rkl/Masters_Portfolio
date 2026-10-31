@@ -5,15 +5,19 @@
    ============================================================ */
 
 :root {
-  /* Color tokens — light (default) */
-  --ink: #1c231d;
-  --paper: #eef3ea;
-  --card: #ffffff;
-  --accent: #6b1420;
-  --accent-tint: #f2e7e5;
-  --text-secondary: #5b6358;
-  --border: #dbe4d6;
-  --focus-ring: #6b1420;
+  /* Color tokens — dark glass theme (single, deliberate dark look) */
+  --ink: #eef3ec;
+  --paper: #0e1512;          /* deep green-charcoal ground */
+  --ground-2: #121b17;       /* slightly lifted surface (nav) */
+  --card: rgba(255, 255, 255, 0.045);   /* glass surface */
+  --card-solid: #141d19;     /* opaque fallback where blur can't apply */
+  --accent: #e4b961;         /* warm gold */
+  --accent-soft: #f0d49a;    /* lighter gold for hovers */
+  --accent-tint: rgba(228, 185, 97, 0.13);
+  --text-secondary: #a4b1a7;
+  --border: rgba(255, 255, 255, 0.10);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --focus-ring: #e4b961;
 
   /* Spacing scale */
   --sp-1: 4px;
@@ -30,21 +34,8 @@
   --font-body: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", "Consolas", monospace;
 
-  --radius: 6px;
+  --radius: 10px;
   --max-width: 1200px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ink: #edf2ea;
-    --paper: #131712;
-    --card: #1c231d;
-    --accent: #d9838c;
-    --accent-tint: #322523;
-    --text-secondary: #a9b3a3;
-    --border: #2c352a;
-    --focus-ring: #d9838c;
-  }
 }
 
 * {
@@ -67,7 +58,12 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background:
+    radial-gradient(1100px 620px at 12% -8%, rgba(228, 185, 97, 0.10), transparent 60%),
+    radial-gradient(900px 520px at 100% 2%, rgba(96, 156, 120, 0.09), transparent 55%),
+    radial-gradient(1000px 700px at 50% 120%, rgba(228, 185, 97, 0.06), transparent 60%),
+    var(--paper);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 17px;
@@ -450,6 +446,14 @@ section:last-of-type {
   margin: 0;
 }
 
+.exp-project-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
 .exp-proj-tag {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -562,8 +566,7 @@ section:last-of-type {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  padding: var(--sp-3);
+  object-fit: cover;
 }
 
 .pc-tag {
@@ -1044,4 +1047,124 @@ footer {
 .inline-photo.photo-placeholder {
   min-height: 160px;
   margin-top: var(--sp-4);
+}
+
+/* ============================================================
+   DARK GLASS THEME — surfaces, depth, motion
+   (layered on top of the token system above)
+   ============================================================ */
+
+/* Frosted-glass surfaces */
+.card,
+.journey-box,
+.pc-card,
+.pc-arrow {
+  background: var(--card);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  backdrop-filter: blur(14px) saturate(120%);
+  border-color: var(--border);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.card:hover,
+.journey-box:hover {
+  border-color: var(--border-strong);
+}
+
+/* Sticky nav as a glass bar */
+.site-nav {
+  background: color-mix(in srgb, var(--ground-2) 72%, transparent);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  backdrop-filter: blur(16px) saturate(130%);
+  border-bottom: 1px solid var(--border);
+}
+
+@media (max-width: 720px) {
+  .nav-links {
+    background: color-mix(in srgb, var(--ground-2) 92%, transparent);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+}
+
+/* Primary button: gold fill needs dark ink */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  color: #10140f;
+  box-shadow: 0 6px 18px rgba(228, 185, 97, 0.22);
+}
+
+.btn-primary:hover {
+  opacity: 1;
+  filter: brightness(1.05);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.03);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Hero portrait: glow ring */
+.hero-photo {
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 0 0 1px rgba(228, 185, 97, 0.12),
+    0 18px 50px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(228, 185, 97, 0.10);
+}
+
+/* Journey track line + markers a touch brighter on dark */
+.journey-marker {
+  box-shadow: 0 0 10px rgba(228, 185, 97, 0.35);
+}
+
+.journey-item.is-current .journey-marker {
+  box-shadow: 0 0 14px rgba(228, 185, 97, 0.6);
+}
+
+/* Project card image headers: darker glass tint so light diagrams sit cleanly */
+.pc-head {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    var(--accent-tint);
+}
+
+.pc-figure,
+.pc-head-img {
+  /* diagrams keep their own light background; frame them softly */
+  border-radius: calc(var(--radius) - 4px);
+}
+
+/* Experience logos sit on their own light tiles — keep a bright backing */
+.exp-logo {
+  background: #fff;
+  padding: 4px;
+}
+
+/* Eyebrow labels: subtle gold */
+.eyebrow {
+  color: var(--accent);
+}
+
+/* ---- Scroll-reveal motion (tasteful, reduced-motion safe) ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }

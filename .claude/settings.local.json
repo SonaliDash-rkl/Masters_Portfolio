@@ -14,7 +14,13 @@
       "Bash(pip install *)",
       "Bash(python -c \"import PIL; print\\('PIL ok', PIL.__version__\\)\")",
       "PowerShell(winget install --id GitHub.cli -e --accept-source-agreements --accept-package-agreements --disable-interactivity)",
-      "PowerShell($p = @\\(\"$env:ProgramFiles\\\\GitHub CLI\\\\gh.exe\",\"${env:ProgramFiles\\(x86\\)}\\\\GitHub CLI\\\\gh.exe\",\"$env:LOCALAPPDATA\\\\Microsoft\\\\WinGet\\\\Links\\\\gh.exe\"\\) | Where-Object { Test-Path $_ } | Select-Object -First 1; if \\($p\\) { Write-Output \"FOUND: $p\"; & $p --version } else { Write-Output \"not found in common paths\"; Get-ChildItem -Path \"$env:ProgramFiles\",\"${env:ProgramFiles\\(x86\\)}\" -Filter gh.exe -Recurse -ErrorAction SilentlyContinue | Select-Object -First 3 -ExpandProperty FullName })"
+      "PowerShell($p = @\\(\"$env:ProgramFiles\\\\GitHub CLI\\\\gh.exe\",\"${env:ProgramFiles\\(x86\\)}\\\\GitHub CLI\\\\gh.exe\",\"$env:LOCALAPPDATA\\\\Microsoft\\\\WinGet\\\\Links\\\\gh.exe\"\\) | Where-Object { Test-Path $_ } | Select-Object -First 1; if \\($p\\) { Write-Output \"FOUND: $p\"; & $p --version } else { Write-Output \"not found in common paths\"; Get-ChildItem -Path \"$env:ProgramFiles\",\"${env:ProgramFiles\\(x86\\)}\" -Filter gh.exe -Recurse -ErrorAction SilentlyContinue | Select-Object -First 3 -ExpandProperty FullName })",
+      "Bash(awk '{print $5, $9}')",
+      "Bash(mkdir -p assets/images/experience)",
+      "Bash(cp \"assets/images/Work Experience pics/deloitte_Project I.png\" assets/images/experience/project1.png)",
+      "Bash(cp \"assets/images/Work Experience pics/deloitte_project2.jpg\" assets/images/experience/project2.jpg)",
+      "Bash(cp \"assets/images/Work Experience pics/Project3.jpeg\" assets/images/experience/project3.jpg)",
+      "Bash(cp \"assets/images/Academic Projects pics/MaysCentral_ProductCanvas.png\" assets/images/projects/mayscentral-canvas.png)"
     ]
   }
 }
