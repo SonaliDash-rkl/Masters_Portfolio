@@ -1168,3 +1168,21 @@ footer {
     transition: none !important;
   }
 }
+
+/* Credly verification link under certifications */
+.cred-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.cred-link:hover {
+  border-bottom-color: var(--accent);
+}
