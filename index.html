@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css?v=19" />
+<link rel="stylesheet" href="css/style.css?v=23" />
 </head>
 <body>
 
@@ -22,7 +22,6 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#leadership">Leadership</a></li>
-      <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -33,6 +32,7 @@
   <!-- ================= HERO ================= -->
   <header class="hero" id="top">
     <div class="container hero-inner">
+      <img class="hero-photo" src="assets/images/profile.jpeg" alt="Sonali Dash, portrait, Texas A&amp;M Mays Business School" />
       <div>
         <p class="eyebrow">MIS Graduate Student · Texas A&amp;M Mays Business School</p>
         <h1 class="hero-name">Sonali Dash</h1>
@@ -57,7 +57,6 @@
           <span class="chip">Toshiba International Corporation AI adoption intern</span>
         </div>
       </div>
-      <img class="hero-photo" src="assets/images/profile.jpeg" alt="Sonali Dash, portrait, Texas A&amp;M Mays Business School" />
     </div>
   </header>
 
@@ -592,45 +591,6 @@
     </div>
   </section>
 
-  <!-- ================= EDUCATION ================= -->
-  <section id="education">
-    <div class="container">
-      <p class="eyebrow">Education</p>
-      <h2 class="section-heading">Education</h2>
-      <div class="edu-list">
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">M.S. Management Information Systems</h3>
-            <span class="card-meta">AUG 2025 – MAY 2027</span>
-          </div>
-          <p class="card-subtitle">Texas A&amp;M University, Mays Business School</p>
-          <div class="coursework chip-list">
-            <span class="chip">Network &amp; Cloud Infrastructure</span>
-            <span class="chip">Business Database Systems</span>
-            <span class="chip">Systems Analysis &amp; Design</span>
-            <span class="chip">Advanced Data Management</span>
-            <span class="chip">Advanced Sys Analysis &amp; Design</span>
-            <span class="chip">MIS Project Mgmt &amp; Implementation</span>
-            <span class="chip">Business Information Security</span>
-            <span class="chip">Corporate Info Planning</span>
-            <span class="chip">Customer Relationship Mgmt Tech</span>
-            <span class="chip">Data Warehousing*</span>
-            <span class="chip">Blockchain &amp; AI Business Transformation*</span>
-            <span class="chip">Statistical Foundations for Data Science*</span>
-          </div>
-          <p class="photo-placeholder-note" style="margin-top: var(--sp-3);">*in progress, Fall 2026</p>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">B.Tech Electrical Engineering</h3>
-            <span class="card-meta">AUG 2017 – JUL 2021</span>
-          </div>
-          <p class="card-subtitle">Veer Surendra Sai University of Technology, India</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ================= CONTACT ================= -->
   <section id="contact">
     <div class="container">
@@ -691,7 +651,7 @@
   (function () {
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var targets = document.querySelectorAll(
-      '.hero-inner > div, .section-heading, .eyebrow, .about-text, .card, .journey-item, .pc-card, .exp-project, .skills-group, .leadership-item, .edu-list > .card, .contact-links, .hero-actions'
+      '.hero-inner > div, .section-heading, .eyebrow, .about-text, .card, .journey-item, .pc-card, .exp-project, .skills-group, .leadership-item, .contact-links, .hero-actions'
     );
     if (reduce || !('IntersectionObserver' in window)) {
       targets.forEach(function (el) { el.classList.add('reveal', 'is-visible'); });

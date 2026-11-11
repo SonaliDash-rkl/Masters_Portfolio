@@ -221,16 +221,13 @@ section:last-of-type {
 }
 
 .hero-inner {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: var(--sp-7);
-  align-items: start;
+  display: block;
 }
 
-@media (max-width: 720px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-  }
+.hero-inner::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .hero-name {
@@ -944,18 +941,6 @@ img.journey-photo {
   font-style: italic;
 }
 
-/* ---------------- Education ---------------- */
-
-.edu-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-5);
-}
-
-.coursework {
-  margin-top: var(--sp-3);
-}
-
 /* ---------------- Contact ---------------- */
 
 .contact-inner {
@@ -1036,12 +1021,24 @@ footer {
 }
 
 .hero-photo {
-  width: 100%;
-  aspect-ratio: 4 / 5;
+  float: left;
+  width: 190px;
+  height: 190px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  object-position: top center;
-  border-radius: var(--radius);
+  object-position: center 25%;
+  border-radius: 50%;
   border: 1px solid var(--border);
+  margin: 4px var(--sp-5) var(--sp-3) 0;
+  shape-outside: circle(50%);
+}
+
+@media (max-width: 560px) {
+  .hero-photo {
+    width: 120px;
+    height: 120px;
+    margin-right: var(--sp-4);
+  }
 }
 
 .inline-photo.photo-placeholder {
@@ -1106,12 +1103,12 @@ footer {
   backdrop-filter: blur(10px);
 }
 
-/* Hero portrait: glow ring */
+/* Hero portrait: circular avatar with a gold glow ring */
 .hero-photo {
-  border: 1px solid var(--border-strong);
-  box-shadow: 0 0 0 1px rgba(228, 185, 97, 0.12),
+  border: 2px solid rgba(228, 185, 97, 0.55);
+  box-shadow: 0 0 0 6px rgba(228, 185, 97, 0.08),
     0 18px 50px rgba(0, 0, 0, 0.5),
-    0 0 60px rgba(228, 185, 97, 0.10);
+    0 0 60px rgba(228, 185, 97, 0.14);
 }
 
 /* Journey track line + markers a touch brighter on dark */
