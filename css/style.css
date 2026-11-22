@@ -216,8 +216,13 @@ section:last-of-type {
 /* ---------------- Hero ---------------- */
 
 .hero {
-  padding-top: var(--sp-7);
-  padding-bottom: var(--sp-6);
+  position: relative;
+  padding-top: var(--sp-8);
+  padding-bottom: var(--sp-8);
+  background:
+    linear-gradient(180deg, rgba(9, 13, 11, 0.82) 0%, rgba(9, 13, 11, 0.88) 55%, rgba(9, 13, 11, 0.96) 100%),
+    url("../assets/images/hero-bg.jpg") center 28% / cover no-repeat;
+  border-bottom: 1px solid var(--border);
 }
 
 .hero-inner {
