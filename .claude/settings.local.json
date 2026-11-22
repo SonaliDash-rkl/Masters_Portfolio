@@ -20,7 +20,9 @@
       "Bash(cp \"assets/images/Work Experience pics/deloitte_Project I.png\" assets/images/experience/project1.png)",
       "Bash(cp \"assets/images/Work Experience pics/deloitte_project2.jpg\" assets/images/experience/project2.jpg)",
       "Bash(cp \"assets/images/Work Experience pics/Project3.jpeg\" assets/images/experience/project3.jpg)",
-      "Bash(cp \"assets/images/Academic Projects pics/MaysCentral_ProductCanvas.png\" assets/images/projects/mayscentral-canvas.png)"
+      "Bash(cp \"assets/images/Academic Projects pics/MaysCentral_ProductCanvas.png\" assets/images/projects/mayscentral-canvas.png)",
+      "Bash(python -c \"import PIL; print\\('PIL \\(no -I\\) ok'\\)\")",
+      "Bash(rm -f assets/images/hero-field.jpg)"
     ]
   }
 }

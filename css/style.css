@@ -221,7 +221,7 @@ section:last-of-type {
   padding-bottom: var(--sp-8);
   background:
     linear-gradient(180deg, rgba(9, 13, 11, 0.82) 0%, rgba(9, 13, 11, 0.88) 55%, rgba(9, 13, 11, 0.96) 100%),
-    url("../assets/images/hero-bg.jpg") center 28% / cover no-repeat;
+    url("../assets/images/hero-bg.jpg") center center / cover no-repeat;
   border-bottom: 1px solid var(--border);
 }
 
