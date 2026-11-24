@@ -220,7 +220,7 @@ section:last-of-type {
   padding-top: var(--sp-8);
   padding-bottom: var(--sp-8);
   background:
-    linear-gradient(180deg, rgba(9, 13, 11, 0.82) 0%, rgba(9, 13, 11, 0.88) 55%, rgba(9, 13, 11, 0.96) 100%),
+    linear-gradient(180deg, rgba(9, 13, 11, 0.62) 0%, rgba(9, 13, 11, 0.70) 55%, rgba(9, 13, 11, 0.85) 100%),
     url("../assets/images/hero-bg.jpg") center center / cover no-repeat;
   border-bottom: 1px solid var(--border);
 }
